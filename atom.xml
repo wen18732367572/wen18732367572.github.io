@@ -18,8 +18,8 @@
   
   <entry>
     <title>标题</title>
-    <link href="http://example.com/2021/07/29/%E6%A0%87%E9%A2%98/"/>
-    <id>http://example.com/2021/07/29/%E6%A0%87%E9%A2%98/</id>
+    <link href="http://example.com/post/undefined.html"/>
+    <id>http://example.com/post/undefined.html</id>
     <published>2021-07-29T01:23:22.000Z</published>
     <updated>2021-07-29T03:15:07.483Z</updated>
     
@@ -38,8 +38,8 @@
   
   <entry>
     <title>春夏秋冬</title>
-    <link href="http://example.com/2021/07/28/%E6%98%A5%E5%A4%8F%E7%A7%8B%E5%86%AC/"/>
-    <id>http://example.com/2021/07/28/%E6%98%A5%E5%A4%8F%E7%A7%8B%E5%86%AC/</id>
+    <link href="http://example.com/post/undefined.html"/>
+    <id>http://example.com/post/undefined.html</id>
     <published>2021-07-28T10:22:18.000Z</published>
     <updated>2021-07-29T03:19:10.304Z</updated>
     
@@ -59,8 +59,8 @@
   
   <entry>
     <title>我的第一篇博客文章</title>
-    <link href="http://example.com/2021/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/"/>
-    <id>http://example.com/2021/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</id>
+    <link href="http://example.com/post/undefined.html"/>
+    <id>http://example.com/post/undefined.html</id>
     <published>2021-06-25T00:45:16.000Z</published>
     <updated>2021-07-29T01:28:15.945Z</updated>
     
@@ -79,8 +79,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2021/06/25/hello-world/"/>
-    <id>http://example.com/2021/06/25/hello-world/</id>
+    <link href="http://example.com/post/undefined.html"/>
+    <id>http://example.com/post/undefined.html</id>
     <published>2021-06-25T00:41:02.351Z</published>
     <updated>2021-06-25T00:41:02.351Z</updated>
     
