@@ -352,15 +352,56 @@
 
         
           
+            <section id="comments" class="comments">
+              <style>
+                .comments {
+                  margin: 30px;
+                  padding: 10px;
+                  background: #fff
+                }
 
-                
+                @media screen and (max-width:800px) {
+                  .comments {
+                    margin: auto;
+                    padding: 10px;
+                    background: #fff
+                  }
+                }
+              </style>
+              <div id="vcomment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "UgPJorKuiNvAT11RtGI9BtgW-gzGzoHsz",
+            app_key: "wul2j9Jy3rVlypJe4hEmu1mT",
+            placeholder: "友情提醒，留下正确的邮箱地址可以第一时间获取评论反馈",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: "10"
+    });
+</script>
 
-                      
+            </section>
+            
 
-                            
+              
+
+                    
+
+                          
 
                                 
-                                      
+
+                                    
+                                          
           </div>
         </div>
       </div>
