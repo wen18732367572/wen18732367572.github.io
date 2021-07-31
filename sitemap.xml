@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://thiswhl.cn/tags/index.html</loc>
+    
+    <lastmod>2021-07-31</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://thiswhl.cn/categories/index.html</loc>
+    
+    <lastmod>2021-07-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://thiswhl.cn/post/14875.html</loc>
     
     <lastmod>2021-07-31</lastmod>
