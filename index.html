@@ -111,7 +111,7 @@
             </ul>
           </nav>
           <nav>
-            总文章数 7
+            总文章数 8
           </nav>
           <nav class="header-smart-menu">
             
@@ -249,6 +249,136 @@
               </div>
               <div id="js-content" class="content-ll">
                 
+  
+    <article id="post-js中substr和substring的区别"
+  class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/12206.html">js中substr和substring的区别</a>
+    </h1>
+  
+
+          
+            <a href="/post/12206.html" class="archive-article-date">
+  	<time datetime="2021-08-03T12:23:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-03</time>
+</a>
+              
+
+                    
+      </header>
+      
+        <!-- 目录内容 -->
+        
+            <!-- 目录内容结束 -->
+
+            <div class="article-entry" itemprop="articleBody">
+              
+
+
+                    
+                              <p>js中substr和substring都是截取字符串中子串，非常相近，可以有一个或两个参数。</p>
+<p>语法：substr(start [，length]) 第一个字符的索引是0，start必选 length可选</p>
+<p>　　　substring(start [, end]) 第一个字符的索引是0，start必选 end可选</p>
+<p>相同点：当有一个参数时，两者的功能是一样的，返回从start指定的位置直到字符串结束的子串</p>
+<p>var str = “hello Tony”;</p>
+<p>str.substr(6); //Tony</p>
+<p>str.substring(6); //Tony</p>
+<p>不同点：有两个参数时</p>
+<p>（1）substr(start,length) 返回从start位置开始length长度的子串</p>
+<p>“goodboy”.substr(1,6);  //oodboy</p>
+<p>【注】当length为0或者负数，返回空字符串</p>
+<p>（2）substring(start,end) 返回从start位置开始到end位置的子串（不包含end）</p>
+<p>“goodboy”.substring(1,6); //oodbo</p>
+<p>【注】:</p>
+<p>（1）substring 方法使用 start 和 end 两者中的较小值作为子字符串的起始点</p>
+<p>（2）start 或 end 为 NaN 或者负数，那么将其替换为0</p>
+
+                                
+                                  <!-- 《添加版权声明 -->
+                                  
+                                    <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+                                      
+                                        <!-- 添加版权声明》 -->
+
+                                        
+
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">js字符串</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+                      
+                        <p class="article-more-link">
+                          <a class="article-more-a" href="/post/12206.html">
+                            展开全文 >>
+                          </a>
+                        </p>
+                        
+
+                          
+                                <div class="clearfix"></div>
+            </div>
+  </div>
+</article>
+
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+        
   
     <article id="post-yilia主题创建分类（categories）和标签（tags）首页"
   class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -1052,6 +1182,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">分类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js字符串</a>
               </li>
             
             <div class="clearfix"></div>

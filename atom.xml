@@ -6,7 +6,7 @@
   <link href="https://thiswhl.cn/atom.xml" rel="self"/>
   
   <link href="https://thiswhl.cn/"/>
-  <updated>2021-07-31T10:18:24.899Z</updated>
+  <updated>2021-08-03T12:25:50.320Z</updated>
   <id>https://thiswhl.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js中substr和substring的区别</title>
+    <link href="https://thiswhl.cn/post/12206.html"/>
+    <id>https://thiswhl.cn/post/12206.html</id>
+    <published>2021-08-03T12:23:49.000Z</published>
+    <updated>2021-08-03T12:25:50.320Z</updated>
+    
+    <content type="html"><![CDATA[<p>js中substr和substring都是截取字符串中子串，非常相近，可以有一个或两个参数。</p><p>语法：substr(start [，length]) 第一个字符的索引是0，start必选 length可选</p><p>　　　substring(start [, end]) 第一个字符的索引是0，start必选 end可选</p><p>相同点：当有一个参数时，两者的功能是一样的，返回从start指定的位置直到字符串结束的子串</p><p>var str = “hello Tony”;</p><p>str.substr(6); //Tony</p><p>str.substring(6); //Tony</p><p>不同点：有两个参数时</p><p>（1）substr(start,length) 返回从start位置开始length长度的子串</p><p>“goodboy”.substr(1,6);  //oodboy</p><p>【注】当length为0或者负数，返回空字符串</p><p>（2）substring(start,end) 返回从start位置开始到end位置的子串（不包含end）</p><p>“goodboy”.substring(1,6); //oodbo</p><p>【注】:</p><p>（1）substring 方法使用 start 和 end 两者中的较小值作为子字符串的起始点</p><p>（2）start 或 end 为 NaN 或者负数，那么将其替换为0</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;js中substr和substring都是截取字符串中子串，非常相近，可以有一个或两个参数。&lt;/p&gt;
+&lt;p&gt;语法：substr(start [，length]) 第一个字符的索引是0，start必选 length可选&lt;/p&gt;
+&lt;p&gt;　　　substring(start [,</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://thiswhl.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="js" scheme="https://thiswhl.cn/tags/js/"/>
+    
+    <category term="js字符串" scheme="https://thiswhl.cn/tags/js%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+  </entry>
   
   <entry>
     <title>yilia主题创建分类（categories）和标签（tags）首页</title>
