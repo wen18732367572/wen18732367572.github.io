@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://thiswhl.cn/post/15151.html</loc>
+    
+    <lastmod>2021-09-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://thiswhl.cn/post/12206.html</loc>
     
     <lastmod>2021-08-03</lastmod>
@@ -110,6 +117,13 @@
   
   <url>
     <loc>https://thiswhl.cn/tags/js%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <lastmod>2021-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thiswhl.cn/tags/jsx%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

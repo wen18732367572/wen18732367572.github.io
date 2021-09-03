@@ -6,7 +6,7 @@
   <link href="https://thiswhl.cn/atom.xml" rel="self"/>
   
   <link href="https://thiswhl.cn/"/>
-  <updated>2021-08-03T12:26:03.388Z</updated>
+  <updated>2021-09-03T10:16:26.446Z</updated>
   <id>https://thiswhl.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jsx语法规则</title>
+    <link href="https://thiswhl.cn/post/15151.html"/>
+    <id>https://thiswhl.cn/post/15151.html</id>
+    <published>2021-09-03T10:00:17.000Z</published>
+    <updated>2021-09-03T10:16:26.446Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="jsx语法规则"><a href="#jsx语法规则" class="headerlink" title="jsx语法规则"></a>jsx语法规则</h1><p>​    1.定义虚拟DOM，不要写引号</p><p>​    2.标签中混入js表达时要用"{}"</p><p>​    3.样式的类名指定 className</p><p>​    4.内联样式要用style ="{{key:'value'}}"的形式写</p><p>​    5.虚拟DOM必须只有一个根标签</p><p>​    6.标签必须闭合</p><p>​    7.标签首字母</p><p>​          若小写字母开头 则将该标签转为html同名元素</p><p>​          若大写字母开头 react则去渲染对应的组件</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;jsx语法规则&quot;&gt;&lt;a href=&quot;#jsx语法规则&quot; class=&quot;headerlink&quot; title=&quot;jsx语法规则&quot;&gt;&lt;/a&gt;jsx语法规则&lt;/h1&gt;&lt;p&gt;​    1.定义虚拟DOM，不要写引号&lt;/p&gt;
+&lt;p&gt;​    2.标签中混入js表达时要用&quot;{}</summary>
+      
+    
+    
+    
+    
+    <category term="jsx语法" scheme="https://thiswhl.cn/tags/jsx%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>js中substr和substring的区别</title>
