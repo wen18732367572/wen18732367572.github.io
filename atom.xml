@@ -6,7 +6,7 @@
   <link href="https://thiswhl.cn/atom.xml" rel="self"/>
   
   <link href="https://thiswhl.cn/"/>
-  <updated>2021-09-03T10:16:26.446Z</updated>
+  <updated>2021-09-24T13:23:36.559Z</updated>
   <id>https://thiswhl.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自定义promise</title>
+    <link href="https://thiswhl.cn/post/34739.html"/>
+    <id>https://thiswhl.cn/post/34739.html</id>
+    <published>2021-09-24T13:20:25.000Z</published>
+    <updated>2021-09-24T13:23:36.559Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="学习promise"><a href="#学习promise" class="headerlink" title="学习promise"></a>学习promise</h1><p>`class Promise {</p><p> constructor(executor) {</p><p>  //添加属性</p><p>  this.PromiseState = “pending”;</p><p>  this.PromiseResult = null;</p><p>  //声明属性</p><p>  this.callbacks = [];</p><p>  //保存实例对象的this的值</p><p>  const self = this;</p><p>  //resolve函数</p><p>  function resolve(data) {</p><p>   //判断状态 promise状态只能更改一次</p><p>   if (self.PromiseState !== “pending”) return;</p><p>   //修改对象状态(promiseState)</p><p>   self.PromiseState = “fulfilled”;</p><p>   //修改对象结果值(promiseResult)</p><p>   self.PromiseResult = data;</p><p>   //调用成功的回调函数</p><p>   setTimeout(() =&gt; {</p><p>​    self.callbacks.forEach((item) =&gt; {</p><p>​     item.onResolved(data);</p><p>​    });</p><p>   });</p><p>  }</p><p>  //reject函数</p><p>  function reject(data) {</p><p>   //判断状态</p><p>   if (self.PromiseState !== “pending”) return;</p><p>   //修改对象状态(promiseState)</p><p>   self.PromiseState = “rejected”;</p><p>   //修改对象结果值(promiseResult)</p><p>   self.PromiseResult = data;</p><p>   //调用成功的回调函数</p><p>   setTimeout(() =&gt; {</p><p>​    self.callbacks.forEach((item) =&gt; {</p><p>​     item.OnRejected(data);</p><p>​    });</p><p>   });</p><p>  }</p><p>  try {</p><p>   //执行器函数在内部是同步调用的</p><p>   executor(resolve, reject);</p><p>  } catch (e) {</p><p>   //修改promise对象状态为【失败】</p><p>   reject(e);</p><p>  }</p><p> }</p><p> //then</p><p> then(onResolved, OnRejected) {</p><p>  const self = this;</p><p>  //判断回调函数</p><p>  if (typeof onResolved !== “function”) {</p><p>   OnRejected = (reason) =&gt; {</p><p>​    throw reason;</p><p>   };</p><p>  }</p><p>  if (typeof onResolved !== “function”) {</p><p>   onResolved = (value) =&gt; value;</p><p>  }</p><p>  return new Promise((resolve, reject) =&gt; {</p><p>   //封装函数</p><p>   function callback(type) {</p><p>​    try {</p><p>​     //获取回调函数的执行结果</p><p>​     let result = type(self.PromiseResult);</p><p>​     //判断result</p><p>​     if (result instanceof Promise) {</p><p>​      //如果是Promise类型的对象</p><p>​      result.then(</p><p>​       (v) =&gt; {</p><p>​        resolve(v);</p><p>​       },</p><p>​       (r) =&gt; {</p><p>​        reject(r);</p><p>​       }</p><p>​      );</p><p>​     } else {</p><p>​      //结果的对像状态为成功</p><p>​      resolve(result);</p><p>​     }</p><p>​    } catch (e) {</p><p>​     reject(e);</p><p>​    }</p><p>   }</p><p>   //调用回调函数 PromiseState</p><p>   if (this.PromiseState === “fulfilled”) {</p><p>​    setTimeout(() =&gt; {</p><p>​     callback(onResolved);</p><p>​    });</p><p>   }</p><p>   if (this.PromiseState === “rejected”) {</p><p>​    setTimeout(() =&gt; {</p><p>​     callback(OnRejected);</p><p>​    });</p><p>   }</p><p>   //判断pending状态</p><p>   if (this.PromiseState === “pending”) {</p><p>​    //保存回调函数</p><p>​    this.callbacks.push({</p><p>​     onResolved: function () {</p><p>​      callback(onResolved);</p><p>​     },</p><p>​     OnRejected: function () {</p><p>​      callback(OnRejected);</p><p>​     },</p><p>​    });</p><p>   }</p><p>  });</p><p> }</p><p> //catch</p><p> catch(OnRejected) {</p><p>  return this.then(undefined, OnRejected);</p><p> }</p><p> //resolve</p><p> static resolve(value) {</p><p>  //返回promise对象</p><p>  return new Promise((resolve, reject) =&gt; {</p><p>   if (value instanceof Promise) {</p><p>​    value.then(</p><p>​     (v) =&gt; {</p><p>​      resolve(v);</p><p>​     },</p><p>​     (r) =&gt; {</p><p>​      reject(r);</p><p>​     }</p><p>​    );</p><p>   } else {</p><p>​    //状态设置为成功</p><p>​    resolve(value);</p><p>   }</p><p>  });</p><p> }</p><p> //reject</p><p> static reject(reason) {</p><p>  return new Promise((resolve, reject) =&gt; {</p><p>   reject(reason);</p><p>  });</p><p> }</p><p> //all</p><p> static all(promises) {</p><p>  //返回结果为promise对象</p><p>  return new Promise((resolve, reject) =&gt; {</p><p>   //声明变量</p><p>   let count = 0;</p><p>   let arr = [];</p><p>   //遍历</p><p>   for (let i = 0; i &lt; promises.length; i++) {</p><p>​    Promise.then(</p><p>​     (v) =&gt; {</p><p>​      //得知对象的状态是成功</p><p>​      //每个promise对象都成功</p><p>​      count++;</p><p>​      //将当前promise对象成功的结果存入到数组中</p><p>​      arr[i] = v;</p><p>​      if (count === promises.length) {</p><p>​       //修改状态</p><p>​       resolve(arr);</p><p>​      }</p><p>​     },</p><p>​     (r) =&gt; {</p><p>​      reject(r);</p><p>​     }</p><p>​    );</p><p>   }</p><p>  });</p><p> }</p><p> //race</p><p> static race(promises) {</p><p>  return new Promise((resolve, reject) =&gt; {</p><p>   for (let i = 0; i &lt; promises.length; i++) {</p><p>​    promises[i].then(</p><p>​     (v) =&gt; {</p><p>​      //修改返回对象的状态为成功</p><p>​      resolve(v);</p><p>​     },</p><p>​     (r) =&gt; {</p><p>​      //修改返回对象的状态为成功</p><p>​      reject(r);</p><p>​     }</p><p>​    );</p><p>   }</p><p>  });</p><p> }</p><p>}`</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;学习promise&quot;&gt;&lt;a href=&quot;#学习promise&quot; class=&quot;headerlink&quot; title=&quot;学习promise&quot;&gt;&lt;/a&gt;学习promise&lt;/h1&gt;&lt;p&gt;`class Promise {&lt;/p&gt;
+&lt;p&gt; constructor(execu</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://thiswhl.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="js" scheme="https://thiswhl.cn/tags/js/"/>
+    
+    <category term="promise" scheme="https://thiswhl.cn/tags/promise/"/>
+    
+  </entry>
   
   <entry>
     <title>jsx语法规则</title>

@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://thiswhl.cn">
-  <title>测试 | whl</title>
+  <title>自定义promise | whl</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="测试132132456 测试1231321 测试132 测试123123">
+  <meta name="description" content="学习promise&#96;class Promise {  constructor(executor) {   &#x2F;&#x2F;添加属性   this.PromiseState &#x3D; “pending”;   this.PromiseResult &#x3D; null;   &#x2F;&#x2F;声明属性   this.callbacks &#x3D; [];   &#x2F;&#x2F;保存实例对象的this的值   const self &#x3D; this;   &#x2F;&#x2F;res">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试">
-<meta property="og:url" content="https://thiswhl.cn/post/37773.html">
+<meta property="og:title" content="自定义promise">
+<meta property="og:url" content="https://thiswhl.cn/post/34739.html">
 <meta property="og:site_name" content="whl">
-<meta property="og:description" content="测试132132456 测试1231321 测试132 测试123123">
+<meta property="og:description" content="学习promise&#96;class Promise {  constructor(executor) {   &#x2F;&#x2F;添加属性   this.PromiseState &#x3D; “pending”;   this.PromiseResult &#x3D; null;   &#x2F;&#x2F;声明属性   this.callbacks &#x3D; [];   &#x2F;&#x2F;保存实例对象的this的值   const self &#x3D; this;   &#x2F;&#x2F;res">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-07-29T13:00:11.000Z">
-<meta property="article:modified_time" content="2021-07-31T09:24:13.883Z">
+<meta property="article:published_time" content="2021-09-24T13:20:25.000Z">
+<meta property="article:modified_time" content="2021-09-24T13:23:36.559Z">
 <meta property="article:author" content="温海龙">
+<meta property="article:tag" content="js">
+<meta property="article:tag" content="promise">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="whl" type="application/atom+xml">
@@ -250,7 +252,7 @@
                   class="anm-canvas"></canvas>
               </div>
               <div id="js-content" class="content-ll">
-                <article id="post-测试"
+                <article id="post-自定义promise"
   class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -258,13 +260,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      测试
+      自定义promise
     </h1>
   
 
           
-            <a href="/post/37773.html" class="archive-article-date">
-  	<time datetime="2021-07-29T13:00:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-29</time>
+            <a href="/post/34739.html" class="archive-article-date">
+  	<time datetime="2021-09-24T13:20:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-24</time>
 </a>
               
 
@@ -273,30 +275,6 @@
       
         <!-- 目录内容 -->
         
-          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
-            <span class="btn-bg"></span>
-            <span class="btn-text">文章导航</span>
-          </p>
-          <div id="toc-article" class="toc-article">
-            <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
-            <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">1.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-1"><span class="toc-number">1.1.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-2"><span class="toc-number">1.1.1.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-3"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">测试</span></a></li></ol></li></ol></li></ol></li></ol>
-          </div>
-          <script type="text/javascript">
-            function showToc() {
-              var toc_article = document.getElementById("toc-article");
-              var show_toc_btn = document.getElementById("show-toc-btn");
-              toc_article.setAttribute("style", "display:block");
-              show_toc_btn.setAttribute("style", "display:none");
-            };
-            function showBtn() {
-              var toc_article = document.getElementById("toc-article");
-              var show_toc_btn = document.getElementById("show-toc-btn");
-              toc_article.setAttribute("style", "display:none");
-              show_toc_btn.setAttribute("style", "display:block");
-            };
-          </script>
-          
             <!-- 目录内容结束 -->
 
             <div class="article-entry" itemprop="articleBody">
@@ -304,10 +282,190 @@
 
 
                     
-                              <h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>132132456</p>
-<h2 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h2><p>1231321</p>
-<h3 id="测试-2"><a href="#测试-2" class="headerlink" title="测试"></a>测试</h3><p>132</p>
-<h4 id="测试-3"><a href="#测试-3" class="headerlink" title="测试"></a>测试</h4><p>123123</p>
+                              <h1 id="学习promise"><a href="#学习promise" class="headerlink" title="学习promise"></a>学习promise</h1><p>`class Promise {</p>
+<p> constructor(executor) {</p>
+<p>  //添加属性</p>
+<p>  this.PromiseState = “pending”;</p>
+<p>  this.PromiseResult = null;</p>
+<p>  //声明属性</p>
+<p>  this.callbacks = [];</p>
+<p>  //保存实例对象的this的值</p>
+<p>  const self = this;</p>
+<p>  //resolve函数</p>
+<p>  function resolve(data) {</p>
+<p>   //判断状态 promise状态只能更改一次</p>
+<p>   if (self.PromiseState !== “pending”) return;</p>
+<p>   //修改对象状态(promiseState)</p>
+<p>   self.PromiseState = “fulfilled”;</p>
+<p>   //修改对象结果值(promiseResult)</p>
+<p>   self.PromiseResult = data;</p>
+<p>   //调用成功的回调函数</p>
+<p>   setTimeout(() =&gt; {</p>
+<p>​    self.callbacks.forEach((item) =&gt; {</p>
+<p>​     item.onResolved(data);</p>
+<p>​    });</p>
+<p>   });</p>
+<p>  }</p>
+<p>  //reject函数</p>
+<p>  function reject(data) {</p>
+<p>   //判断状态</p>
+<p>   if (self.PromiseState !== “pending”) return;</p>
+<p>   //修改对象状态(promiseState)</p>
+<p>   self.PromiseState = “rejected”;</p>
+<p>   //修改对象结果值(promiseResult)</p>
+<p>   self.PromiseResult = data;</p>
+<p>   //调用成功的回调函数</p>
+<p>   setTimeout(() =&gt; {</p>
+<p>​    self.callbacks.forEach((item) =&gt; {</p>
+<p>​     item.OnRejected(data);</p>
+<p>​    });</p>
+<p>   });</p>
+<p>  }</p>
+<p>  try {</p>
+<p>   //执行器函数在内部是同步调用的</p>
+<p>   executor(resolve, reject);</p>
+<p>  } catch (e) {</p>
+<p>   //修改promise对象状态为【失败】</p>
+<p>   reject(e);</p>
+<p>  }</p>
+<p> }</p>
+<p> //then</p>
+<p> then(onResolved, OnRejected) {</p>
+<p>  const self = this;</p>
+<p>  //判断回调函数</p>
+<p>  if (typeof onResolved !== “function”) {</p>
+<p>   OnRejected = (reason) =&gt; {</p>
+<p>​    throw reason;</p>
+<p>   };</p>
+<p>  }</p>
+<p>  if (typeof onResolved !== “function”) {</p>
+<p>   onResolved = (value) =&gt; value;</p>
+<p>  }</p>
+<p>  return new Promise((resolve, reject) =&gt; {</p>
+<p>   //封装函数</p>
+<p>   function callback(type) {</p>
+<p>​    try {</p>
+<p>​     //获取回调函数的执行结果</p>
+<p>​     let result = type(self.PromiseResult);</p>
+<p>​     //判断result</p>
+<p>​     if (result instanceof Promise) {</p>
+<p>​      //如果是Promise类型的对象</p>
+<p>​      result.then(</p>
+<p>​       (v) =&gt; {</p>
+<p>​        resolve(v);</p>
+<p>​       },</p>
+<p>​       (r) =&gt; {</p>
+<p>​        reject(r);</p>
+<p>​       }</p>
+<p>​      );</p>
+<p>​     } else {</p>
+<p>​      //结果的对像状态为成功</p>
+<p>​      resolve(result);</p>
+<p>​     }</p>
+<p>​    } catch (e) {</p>
+<p>​     reject(e);</p>
+<p>​    }</p>
+<p>   }</p>
+<p>   //调用回调函数 PromiseState</p>
+<p>   if (this.PromiseState === “fulfilled”) {</p>
+<p>​    setTimeout(() =&gt; {</p>
+<p>​     callback(onResolved);</p>
+<p>​    });</p>
+<p>   }</p>
+<p>   if (this.PromiseState === “rejected”) {</p>
+<p>​    setTimeout(() =&gt; {</p>
+<p>​     callback(OnRejected);</p>
+<p>​    });</p>
+<p>   }</p>
+<p>   //判断pending状态</p>
+<p>   if (this.PromiseState === “pending”) {</p>
+<p>​    //保存回调函数</p>
+<p>​    this.callbacks.push({</p>
+<p>​     onResolved: function () {</p>
+<p>​      callback(onResolved);</p>
+<p>​     },</p>
+<p>​     OnRejected: function () {</p>
+<p>​      callback(OnRejected);</p>
+<p>​     },</p>
+<p>​    });</p>
+<p>   }</p>
+<p>  });</p>
+<p> }</p>
+<p> //catch</p>
+<p> catch(OnRejected) {</p>
+<p>  return this.then(undefined, OnRejected);</p>
+<p> }</p>
+<p> //resolve</p>
+<p> static resolve(value) {</p>
+<p>  //返回promise对象</p>
+<p>  return new Promise((resolve, reject) =&gt; {</p>
+<p>   if (value instanceof Promise) {</p>
+<p>​    value.then(</p>
+<p>​     (v) =&gt; {</p>
+<p>​      resolve(v);</p>
+<p>​     },</p>
+<p>​     (r) =&gt; {</p>
+<p>​      reject(r);</p>
+<p>​     }</p>
+<p>​    );</p>
+<p>   } else {</p>
+<p>​    //状态设置为成功</p>
+<p>​    resolve(value);</p>
+<p>   }</p>
+<p>  });</p>
+<p> }</p>
+<p> //reject</p>
+<p> static reject(reason) {</p>
+<p>  return new Promise((resolve, reject) =&gt; {</p>
+<p>   reject(reason);</p>
+<p>  });</p>
+<p> }</p>
+<p> //all</p>
+<p> static all(promises) {</p>
+<p>  //返回结果为promise对象</p>
+<p>  return new Promise((resolve, reject) =&gt; {</p>
+<p>   //声明变量</p>
+<p>   let count = 0;</p>
+<p>   let arr = [];</p>
+<p>   //遍历</p>
+<p>   for (let i = 0; i &lt; promises.length; i++) {</p>
+<p>​    Promise.then(</p>
+<p>​     (v) =&gt; {</p>
+<p>​      //得知对象的状态是成功</p>
+<p>​      //每个promise对象都成功</p>
+<p>​      count++;</p>
+<p>​      //将当前promise对象成功的结果存入到数组中</p>
+<p>​      arr[i] = v;</p>
+<p>​      if (count === promises.length) {</p>
+<p>​       //修改状态</p>
+<p>​       resolve(arr);</p>
+<p>​      }</p>
+<p>​     },</p>
+<p>​     (r) =&gt; {</p>
+<p>​      reject(r);</p>
+<p>​     }</p>
+<p>​    );</p>
+<p>   }</p>
+<p>  });</p>
+<p> }</p>
+<p> //race</p>
+<p> static race(promises) {</p>
+<p>  return new Promise((resolve, reject) =&gt; {</p>
+<p>   for (let i = 0; i &lt; promises.length; i++) {</p>
+<p>​    promises[i].then(</p>
+<p>​     (v) =&gt; {</p>
+<p>​      //修改返回对象的状态为成功</p>
+<p>​      resolve(v);</p>
+<p>​     },</p>
+<p>​     (r) =&gt; {</p>
+<p>​      //修改返回对象的状态为成功</p>
+<p>​      reject(r);</p>
+<p>​     }</p>
+<p>​    );</p>
+<p>   }</p>
+<p>  });</p>
+<p> }</p>
+<p>}`</p>
 
                                 
                                   <!-- 《添加版权声明 -->
@@ -364,7 +522,33 @@
             <div class="article-info article-info-index">
               
                   
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">promise</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
                     
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
                       
 
@@ -414,7 +598,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://thiswhl.cn/post/37773.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://thiswhl.cn/post/34739.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -428,18 +612,9 @@
   
 <nav id="article-nav">
   
-    <a href="/post/14875.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Nice to meet you
-        
-      </div>
-    </a>
   
-  
-    <a href="/post/undefined.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">标题</div>
+    <a href="/post/15151.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jsx语法规则</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -461,19 +636,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">1.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-1"><span class="toc-number">1.1.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-2"><span class="toc-number">1.1.1.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-3"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">测试</span></a></li></ol></li></ol></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
