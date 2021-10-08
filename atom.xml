@@ -6,7 +6,7 @@
   <link href="https://thiswhl.cn/atom.xml" rel="self"/>
   
   <link href="https://thiswhl.cn/"/>
-  <updated>2021-09-24T13:30:34.226Z</updated>
+  <updated>2021-10-08T14:15:46.463Z</updated>
   <id>https://thiswhl.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>react脚手架配置代理</title>
+    <link href="https://thiswhl.cn/post/40546.html"/>
+    <id>https://thiswhl.cn/post/40546.html</id>
+    <published>2021-10-08T14:13:15.000Z</published>
+    <updated>2021-10-08T14:15:46.463Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="react脚手架配置代理总结"><a href="#react脚手架配置代理总结" class="headerlink" title="react脚手架配置代理总结"></a>react脚手架配置代理总结</h1><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><blockquote><p>在package.json中追加如下配置</p></blockquote><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;proxy&quot;</span>:<span class="string">&quot;http://localhost:5000&quot;</span></span><br></pre></td></tr></table></figure><p>说明：</p><ol><li>优点：配置简单，前端请求资源时可以不加任何前缀。</li><li>缺点：不能配置多个代理。</li><li>工作方式：上述方式配置代理，当请求了3000不存在的资源时，那么该请求会转发给5000 （优先匹配前端资源）</li></ol><h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><ol><li><p>第一步：创建代理配置文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在src下创建配置文件：src/setupProxy.js</span><br></pre></td></tr></table></figure></li><li><p>编写setupProxy.js配置具体代理规则：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> proxy = <span class="built_in">require</span>(<span class="string">&#x27;http-proxy-middleware&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">app</span>) </span>&#123;</span><br><span class="line">  app.use(</span><br><span class="line">    proxy(<span class="string">&#x27;/api1&#x27;</span>, &#123;  <span class="comment">//api1是需要转发的请求(所有带有/api1前缀的请求都会转发给5000)</span></span><br><span class="line">      <span class="attr">target</span>: <span class="string">&#x27;http://localhost:5000&#x27;</span>, <span class="comment">//配置转发目标地址(能返回数据的服务器地址)</span></span><br><span class="line">      <span class="attr">changeOrigin</span>: <span class="literal">true</span>, <span class="comment">//控制服务器接收到的请求头中host字段的值</span></span><br><span class="line">      <span class="comment">/*</span></span><br><span class="line"><span class="comment">      changeOrigin设置为true时，服务器收到的请求头中的host为：localhost:5000</span></span><br><span class="line"><span class="comment">      changeOrigin设置为false时，服务器收到的请求头中的host为：localhost:3000</span></span><br><span class="line"><span class="comment">      changeOrigin默认值为false，但我们一般将changeOrigin值设为true</span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line">      <span class="attr">pathRewrite</span>: &#123;<span class="string">&#x27;^/api1&#x27;</span>: <span class="string">&#x27;&#x27;</span>&#125; <span class="comment">//去除请求前缀，保证交给后台服务器的是正常请求地址(必须配置)</span></span><br><span class="line">    &#125;),</span><br><span class="line">    proxy(<span class="string">&#x27;/api2&#x27;</span>, &#123; </span><br><span class="line">      <span class="attr">target</span>: <span class="string">&#x27;http://localhost:5001&#x27;</span>,</span><br><span class="line">      <span class="attr">changeOrigin</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">pathRewrite</span>: &#123;<span class="string">&#x27;^/api2&#x27;</span>: <span class="string">&#x27;&#x27;</span>&#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><p>说明：</p><ol><li>优点：可以配置多个代理，可以灵活的控制请求是否走代理。</li><li>缺点：配置繁琐，前端请求资源时必须加前缀。</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;react脚手架配置代理总结&quot;&gt;&lt;a href=&quot;#react脚手架配置代理总结&quot; class=&quot;headerlink&quot; title=&quot;react脚手架配置代理总结&quot;&gt;&lt;/a&gt;react脚手架配置代理总结&lt;/h1&gt;&lt;h2 id=&quot;方法一&quot;&gt;&lt;a href=&quot;#方法</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://thiswhl.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="react" scheme="https://thiswhl.cn/tags/react/"/>
+    
+    <category term="react配置代理" scheme="https://thiswhl.cn/tags/react%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86/"/>
+    
+    <category term="react脚手架" scheme="https://thiswhl.cn/tags/react%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>自定义promise</title>
