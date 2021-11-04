@@ -111,7 +111,7 @@
             </ul>
           </nav>
           <nav>
-            总文章数 12
+            总文章数 13
           </nav>
           <nav class="header-smart-menu">
             
@@ -249,6 +249,156 @@
               </div>
               <div id="js-content" class="content-ll">
                 
+  
+    <article id="post-学习队列结构"
+  class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/59869.html">学习队列结构</a>
+    </h1>
+  
+
+          
+            <a href="/post/59869.html" class="archive-article-date">
+  	<time datetime="2021-11-04T11:37:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-04</time>
+</a>
+              
+
+                    
+      </header>
+      
+        <!-- 目录内容 -->
+        
+            <!-- 目录内容结束 -->
+
+            <div class="article-entry" itemprop="articleBody">
+              
+
+
+                    
+                              <h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p><strong>队列</strong>就是一个受限的线性表，遵循着“<strong>先进先出，后进后出</strong>”的原则，即只允许在队列的前端删除元素，在队列的后端进行添加元素。</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">enqueue()</td>
+<td align="center">向队列后端添加元素</td>
+</tr>
+<tr>
+<td align="center">dequeue()</td>
+<td align="center">删除队列最前端的元素，并返回该元素</td>
+</tr>
+<tr>
+<td align="center">front()</td>
+<td align="center">返回队列前端的元素，但不会移除该元素</td>
+</tr>
+<tr>
+<td align="center">isEmpty()</td>
+<td align="center">查看队列是否为空</td>
+</tr>
+<tr>
+<td align="center">size()</td>
+<td align="center">返回队列元素的个数</td>
+</tr>
+<tr>
+<td align="center">toString()</td>
+<td align="center">以字符串的形式展示队列内的所有元素</td>
+</tr>
+</tbody></table>
+<p><em>接下来看下代码</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Queue</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//属性</span></span><br><span class="line">  <span class="built_in">this</span>.list = [];</span><br><span class="line">  <span class="comment">//enqueue()方法就是向一个队列的后端（数组的尾部）添加新的元素的方法</span></span><br><span class="line">  Queue.prototype.enqueue = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.list.push(e);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//dequeue()方法就是删除队列中最前端（数组的前面）的一个元素，并返回该元素</span></span><br><span class="line">  Queue.prototype.dequeue = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.list.shift(e);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//front()方法就是返回队列最前端（数组的前面）的第一个元素，并且不会对队列里的数组进行任何的操作</span></span><br><span class="line">  Queue.prototype.front = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.list[<span class="number">0</span>];</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//isEmpty()方法就是判断队列是否为空（数组内是否有元素），若为空，则返回 true；否则，返回 false</span></span><br><span class="line">  Queue.prototype.isEmpty = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.list.length === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//size()方法就是查询并返回队列中的元素个数（数组的长度）</span></span><br><span class="line">  Queue.prototype.size = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.list.length;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//toString()方法就是将队列内的元素用字符串的方式展示出来（将数组转化成字符串）并返回</span></span><br><span class="line">  Queue.prototype.toString = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> string = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> <span class="built_in">this</span>.list) &#123;</span><br><span class="line">      string += <span class="string">`<span class="subst">$&#123;<span class="built_in">this</span>.list[i]&#125;</span> `</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> string;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 改版击鼓传花</span></span><br><span class="line"><span class="comment"> *   几个人围坐成一个圈，指定一个数字，例如3，选其中一个人开始数数，数到3的那个人被淘汰，</span></span><br><span class="line"><span class="comment"> *   然后从刚刚被淘汰的人的下一个人重新开始数。以此类推……直到只剩一个人，那么这个剩下的人就是获胜者</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *   其实很简单，因为所有人坐成一个圈形成了一个循环，所以我们可以每数一个数，将队列前端的元素取出，</span></span><br><span class="line"><span class="comment"> *   再重新添加到队列的后端，如果是数到了刚开始规定的数字，则该被取出的元素不再被添加到队列的后端了，</span></span><br><span class="line"><span class="comment"> *   然后又继续重新数数，以此类推……直到队列里只有一个元素了，该元素就是最终获胜的。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">passFlower</span>(<span class="params">member, num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> queue = <span class="keyword">new</span> Queue();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; member.length; i++) &#123;</span><br><span class="line">    queue.enqueue(member[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (queue.list.length !== <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num - <span class="number">1</span>; i++) &#123;</span><br><span class="line">      queue.enqueue(queue.dequeue());</span><br><span class="line">    &#125;</span><br><span class="line">    queue.dequeue();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> queue.list[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(passFlower([<span class="string">&quot;V&quot;</span>, <span class="string">&quot;W&quot;</span>, <span class="string">&quot;X&quot;</span>, <span class="string">&quot;Y&quot;</span>, <span class="string">&quot;Z&quot;</span>], <span class="number">3</span>)); <span class="comment">//Y</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+                                
+                                  <!-- 《添加版权声明 -->
+                                  
+                                    <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+                                      
+                                        <!-- 添加版权声明》 -->
+
+                                        
+
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">队列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+                      
+                        <p class="article-more-link">
+                          <a class="article-more-a" href="/post/59869.html">
+                            展开全文 >>
+                          </a>
+                        </p>
+                        
+
+                          
+                                <div class="clearfix"></div>
+            </div>
+  </div>
+</article>
+
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+        
   
     <article id="post-学习栈结构"
   class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -1268,95 +1418,6 @@
 
         
   
-    <article id="post-春夏秋冬"
-  class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/undefined.html">春夏秋冬</a>
-    </h1>
-  
-
-          
-            <a href="/post/undefined.html" class="archive-article-date">
-  	<time datetime="2021-07-28T10:22:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-28</time>
-</a>
-              
-
-                    
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-
-            <div class="article-entry" itemprop="articleBody">
-              
-
-
-                    
-                              <hr>
-<h2 id="这是一篇新的文章"><a href="#这是一篇新的文章" class="headerlink" title="这是一篇新的文章"></a>这是一篇新的文章</h2><h2 id="很高兴遇见你"><a href="#很高兴遇见你" class="headerlink" title="  很高兴遇见你"></a>  很高兴遇见你</h2>
-                                
-                                  <!-- 《添加版权声明 -->
-                                  
-                                    <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-                                      
-                                        <!-- 添加版权声明》 -->
-
-                                        
-
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/post/undefined.html">
-                            展开全文 >>
-                          </a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-      <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-        
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1505,6 +1566,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">队列</a>
               </li>
             
             <div class="clearfix"></div>

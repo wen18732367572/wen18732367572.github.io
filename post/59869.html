@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://thiswhl.cn">
-  <title>Tag: 分类 | whl</title>
+  <title>学习队列结构 | whl</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的个人博客~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="whl">
-<meta property="og:url" content="https://thiswhl.cn/tags/%E5%88%86%E7%B1%BB/index.html">
+  <meta name="description" content="队列队列就是一个受限的线性表，遵循着“先进先出，后进后出”的原则，即只允许在队列的前端删除元素，在队列的后端进行添加元素。    方法 含义    enqueue() 向队列后端添加元素   dequeue() 删除队列最前端的元素，并返回该元素   front() 返回队列前端的元素，但不会移除该元素   isEmpty() 查看队列是否为空   size() 返回队列元素的个数   toStr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习队列结构">
+<meta property="og:url" content="https://thiswhl.cn/post/59869.html">
 <meta property="og:site_name" content="whl">
-<meta property="og:description" content="这是我的个人博客~">
+<meta property="og:description" content="队列队列就是一个受限的线性表，遵循着“先进先出，后进后出”的原则，即只允许在队列的前端删除元素，在队列的后端进行添加元素。    方法 含义    enqueue() 向队列后端添加元素   dequeue() 删除队列最前端的元素，并返回该元素   front() 返回队列前端的元素，但不会移除该元素   isEmpty() 查看队列是否为空   size() 返回队列元素的个数   toStr">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-04T11:37:42.000Z">
+<meta property="article:modified_time" content="2021-11-04T11:56:57.716Z">
 <meta property="article:author" content="温海龙">
+<meta property="article:tag" content="队列">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="whl" type="application/atom+xml">
@@ -248,77 +251,312 @@
                   class="anm-canvas"></canvas>
               </div>
               <div id="js-content" class="content-ll">
-                
-  
-  
+                <article id="post-学习队列结构"
+  class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/post/33427.html" class="archive-article-date">
-  	<time datetime="2021-07-31T09:32:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/post/33427.html">yilia主题创建分类（categories）和标签（tags）首页</a>
+    <h1 class="article-title" itemprop="name">
+      学习队列结构
     </h1>
   
 
-        <div class="article-info info-on-right">
           
+            <a href="/post/59869.html" class="archive-article-date">
+  	<time datetime="2021-11-04T11:37:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-04</time>
+</a>
+              
+
+                    
+      </header>
+      
+        <!-- 目录内容 -->
+        
+            <!-- 目录内容结束 -->
+
+            <div class="article-entry" itemprop="articleBody">
+              
+
+
+                    
+                              <h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p><strong>队列</strong>就是一个受限的线性表，遵循着“<strong>先进先出，后进后出</strong>”的原则，即只允许在队列的前端删除元素，在队列的后端进行添加元素。</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">enqueue()</td>
+<td align="center">向队列后端添加元素</td>
+</tr>
+<tr>
+<td align="center">dequeue()</td>
+<td align="center">删除队列最前端的元素，并返回该元素</td>
+</tr>
+<tr>
+<td align="center">front()</td>
+<td align="center">返回队列前端的元素，但不会移除该元素</td>
+</tr>
+<tr>
+<td align="center">isEmpty()</td>
+<td align="center">查看队列是否为空</td>
+</tr>
+<tr>
+<td align="center">size()</td>
+<td align="center">返回队列元素的个数</td>
+</tr>
+<tr>
+<td align="center">toString()</td>
+<td align="center">以字符串的形式展示队列内的所有元素</td>
+</tr>
+</tbody></table>
+<p><em>接下来看下代码</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Queue</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//属性</span></span><br><span class="line">  <span class="built_in">this</span>.list = [];</span><br><span class="line">  <span class="comment">//enqueue()方法就是向一个队列的后端（数组的尾部）添加新的元素的方法</span></span><br><span class="line">  Queue.prototype.enqueue = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.list.push(e);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//dequeue()方法就是删除队列中最前端（数组的前面）的一个元素，并返回该元素</span></span><br><span class="line">  Queue.prototype.dequeue = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.list.shift(e);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//front()方法就是返回队列最前端（数组的前面）的第一个元素，并且不会对队列里的数组进行任何的操作</span></span><br><span class="line">  Queue.prototype.front = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.list[<span class="number">0</span>];</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//isEmpty()方法就是判断队列是否为空（数组内是否有元素），若为空，则返回 true；否则，返回 false</span></span><br><span class="line">  Queue.prototype.isEmpty = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.list.length === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//size()方法就是查询并返回队列中的元素个数（数组的长度）</span></span><br><span class="line">  Queue.prototype.size = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.list.length;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//toString()方法就是将队列内的元素用字符串的方式展示出来（将数组转化成字符串）并返回</span></span><br><span class="line">  Queue.prototype.toString = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> string = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> <span class="built_in">this</span>.list) &#123;</span><br><span class="line">      string += <span class="string">`<span class="subst">$&#123;<span class="built_in">this</span>.list[i]&#125;</span> `</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> string;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 改版击鼓传花</span></span><br><span class="line"><span class="comment"> *   几个人围坐成一个圈，指定一个数字，例如3，选其中一个人开始数数，数到3的那个人被淘汰，</span></span><br><span class="line"><span class="comment"> *   然后从刚刚被淘汰的人的下一个人重新开始数。以此类推……直到只剩一个人，那么这个剩下的人就是获胜者</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *   其实很简单，因为所有人坐成一个圈形成了一个循环，所以我们可以每数一个数，将队列前端的元素取出，</span></span><br><span class="line"><span class="comment"> *   再重新添加到队列的后端，如果是数到了刚开始规定的数字，则该被取出的元素不再被添加到队列的后端了，</span></span><br><span class="line"><span class="comment"> *   然后又继续重新数数，以此类推……直到队列里只有一个元素了，该元素就是最终获胜的。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">passFlower</span>(<span class="params">member, num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> queue = <span class="keyword">new</span> Queue();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; member.length; i++) &#123;</span><br><span class="line">    queue.enqueue(member[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (queue.list.length !== <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num - <span class="number">1</span>; i++) &#123;</span><br><span class="line">      queue.enqueue(queue.dequeue());</span><br><span class="line">    &#125;</span><br><span class="line">    queue.dequeue();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> queue.list[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(passFlower([<span class="string">&quot;V&quot;</span>, <span class="string">&quot;W&quot;</span>, <span class="string">&quot;X&quot;</span>, <span class="string">&quot;Y&quot;</span>, <span class="string">&quot;Z&quot;</span>], <span class="number">3</span>)); <span class="comment">//Y</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+                                
+                                  <!-- 《添加版权声明 -->
+                                  
+                                    <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+                                      
+                                        <!-- 添加版权声明》 -->
+
+                                        
+                                          <div class="page-reward">
+                                            <a href="javascript:;" class="page-reward-btn tooltip-top">
+                                              <div class="tooltip tooltip-east">
+                                                <span class="tooltip-item">
+                                                  赏
+                                                </span>
+                                                <span class="tooltip-content">
+                                                  <span class="tooltip-text">
+                                                    <span class="tooltip-inner">
+                                                      <p class="reward-p"><i class="icon icon-quo-left"></i>
+                                                        谢谢你请我吃糖果<i class="icon icon-quo-right"></i>
+                                                      </p>
+                                                      <div class="reward-box">
+                                                        
+                                                          <div class="reward-box-item">
+                                                            <img class="reward-img" src="/assets/img/zhifubao.png">
+                                                            <span class="reward-type">支付宝</span>
+                                                          </div>
+                                                          
+                                                            
+                                                              <div class="reward-box-item">
+                                                                <img class="reward-img" src="/assets/img/weixin.png">
+                                                                <span class="reward-type">微信</span>
+                                                              </div>
+                                                              
+                                                      </div>
+                                                    </span>
+                                                  </span>
+                                                </span>
+                                              </div>
+                                            </a>
+                                          </div>
+                                          
+
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">标签</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">队列</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+                    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/博客//" class="article-tag-list-link color3">博客</a>
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+                      
+
+                          
+                            
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://thiswhl.cn/post/59869.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                              
+                                <div class="clearfix"></div>
+            </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/post/50362.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习栈结构</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+  <span id="busuanzi_container_page_pv">
+    本文阅读量: <span id="busuanzi_value_page_pv"></span>次
+</span>
+</nav>
 
     
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
 
 
+        
+          
+            <section id="comments" class="comments">
+              <style>
+                .comments {
+                  margin: 30px;
+                  padding: 10px;
+                  background: #fff
+                }
+
+                @media screen and (max-width:800px) {
+                  .comments {
+                    margin: auto;
+                    padding: 10px;
+                    background: #fff
+                  }
+                }
+              </style>
+              <div id="vcomment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "UgPJorKuiNvAT11RtGI9BtgW-gzGzoHsz",
+            app_key: "wul2j9Jy3rVlypJe4hEmu1mT",
+            placeholder: "友情提醒，留下正确的邮箱地址可以第一时间获取评论反馈",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: "10"
+    });
+</script>
+
+            </section>
+            
+
+              
+
+                    
+
+                          
+
+                                
+                                    <!-- 版权声明 -->
+                                    
+                                      <!--添加版权声明-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <ul class="copyright" hidden="hidden"></ul>
+
+<!-- 添加版权声明》 -->
+
+
+                                        
+                                          <!-- 声明结束 -->
+                                          
+                                                
               </div>
             </div>
           </div>
@@ -346,9 +584,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
