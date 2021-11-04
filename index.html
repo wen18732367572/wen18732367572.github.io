@@ -111,7 +111,7 @@
             </ul>
           </nav>
           <nav>
-            总文章数 11
+            总文章数 12
           </nav>
           <nav class="header-smart-menu">
             
@@ -249,6 +249,118 @@
               </div>
               <div id="js-content" class="content-ll">
                 
+  
+    <article id="post-学习栈结构"
+  class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/50362.html">学习栈结构</a>
+    </h1>
+  
+
+          
+            <a href="/post/50362.html" class="archive-article-date">
+  	<time datetime="2021-11-04T11:26:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-04</time>
+</a>
+              
+
+                    
+      </header>
+      
+        <!-- 目录内容 -->
+        
+            <!-- 目录内容结束 -->
+
+            <div class="article-entry" itemprop="articleBody">
+              
+
+
+                    
+                              <h1 id="栈结构"><a href="#栈结构" class="headerlink" title="栈结构"></a>栈结构</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Stack</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.list = [];</span><br><span class="line">  <span class="comment">//push方法的实现</span></span><br><span class="line">  Stack.prototype.push = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.list.push(e);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//pop()方法的实现</span></span><br><span class="line">  Stack.prototype.pop = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.list.pop();</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//getTopElement()方法就相当于是查看一下栈顶的元素是什么（查看数组尾部的元素），而不会对栈内元素进行任何的入栈或出栈操作</span></span><br><span class="line">  <span class="comment">//getTopElement()方法的实现</span></span><br><span class="line">  Stack.prototype.getTopElement = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.list[<span class="built_in">this</span>.list.length - <span class="number">1</span>];</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//isEmpty()方法的实现</span></span><br><span class="line">  Stack.prototype.isEmpty = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> size = <span class="built_in">this</span>.list.length;</span><br><span class="line">    <span class="keyword">if</span> (size === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//size()方法的实现</span></span><br><span class="line">  Stack.prototype.size = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.list.length;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//toString()方法就是将栈内的元素用字符串的方式展示出来（将数组转化成字符串）并返回</span></span><br><span class="line">  Stack.prototype.size = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> string = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> <span class="built_in">this</span>.list) &#123;</span><br><span class="line">      string += <span class="string">`<span class="subst">$&#123;<span class="built_in">this</span>.list[i]&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> string;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//通过栈结构实现一个函数，将输入的十进制转化成二进制</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">d2d</span>(<span class="params">number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> stack = <span class="keyword">new</span> Stack();</span><br><span class="line">  <span class="keyword">while</span> (number &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    stack.push(number % <span class="number">2</span>);</span><br><span class="line">    number = <span class="built_in">Math</span>.floor(number / <span class="number">2</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> string = <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">    string += stack.pop();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> string;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+                                
+                                  <!-- 《添加版权声明 -->
+                                  
+                                    <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+                                      
+                                        <!-- 添加版权声明》 -->
+
+                                        
+
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+                      
+                        <p class="article-more-link">
+                          <a class="article-more-a" href="/post/50362.html">
+                            展开全文 >>
+                          </a>
+                        </p>
+                        
+
+                          
+                                <div class="clearfix"></div>
+            </div>
+  </div>
+</article>
+
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+        
   
     <article id="post-react脚手架配置代理"
   class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -1245,96 +1357,6 @@
 
         
   
-    <article id="post-我的第一篇博客文章"
-  class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/undefined.html">我的第一篇博客文章</a>
-    </h1>
-  
-
-          
-            <a href="/post/undefined.html" class="archive-article-date">
-  	<time datetime="2021-06-25T00:45:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-25</time>
-</a>
-              
-
-                    
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-
-            <div class="article-entry" itemprop="articleBody">
-              
-
-
-                    
-                              <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h2 id="大家好，我是温海龙！来自河北科技工程职业技术大学，请多多关照"><a href="#大家好，我是温海龙！来自河北科技工程职业技术大学，请多多关照" class="headerlink" title="大家好，我是温海龙！来自河北科技工程职业技术大学，请多多关照"></a>大家好，我是温海龙！来自河北科技工程职业技术大学，请多多关照</h2><h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>##参考文献</p>
-<p><a target="_blank" rel="noopener" href="http://www.thiswhl.cn/">www.thiswhl.cn</a></p>
-
-                                
-                                  <!-- 《添加版权声明 -->
-                                  
-                                    <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-                                      
-                                        <!-- 添加版权声明》 -->
-
-                                        
-
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/post/undefined.html">
-                            展开全文 >>
-                          </a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-      <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-        
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1479,6 +1501,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">react脚手架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
             
             <div class="clearfix"></div>
