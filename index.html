@@ -111,7 +111,7 @@
             </ul>
           </nav>
           <nav>
-            总文章数 19
+            总文章数 20
           </nav>
           <nav class="header-smart-menu">
             
@@ -249,6 +249,151 @@
               </div>
               <div id="js-content" class="content-ll">
                 
+  
+    <article id="post-优先级队列"
+  class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/36266.html">优先级队列</a>
+    </h1>
+  
+
+          
+            <a href="/post/36266.html" class="archive-article-date">
+  	<time datetime="2021-11-05T02:12:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-05</time>
+</a>
+              
+
+                    
+      </header>
+      
+        <!-- 目录内容 -->
+        
+            <!-- 目录内容结束 -->
+
+            <div class="article-entry" itemprop="articleBody">
+              
+
+
+                    
+                              <h2 id="优先级队列"><a href="#优先级队列" class="headerlink" title="优先级队列"></a>优先级队列</h2><p> <em>在向优先级队列插入元素时，每个元素有一个自己的号码牌， 表示该元素是排在队列的前端还是后端。因此，在优先级队列里，也就没有先进先出这样一个结构特点了。</em></p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">enqueue()</td>
+<td align="center">向队列后端添加元素</td>
+</tr>
+<tr>
+<td align="center">dequeue()</td>
+<td align="center">删除队列最前端的元素，并返回该元素</td>
+</tr>
+<tr>
+<td align="center">front()</td>
+<td align="center">返回队列前端的元素，但不会移除该元素</td>
+</tr>
+<tr>
+<td align="center">isEmpty()</td>
+<td align="center">查看队列是否为空</td>
+</tr>
+<tr>
+<td align="center">size()</td>
+<td align="center">返回队列元素的个数</td>
+</tr>
+<tr>
+<td align="center">toString()</td>
+<td align="center">以字符串的形式展示队列内的所有元素</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 优先级队列(数组实现)：</span></span><br><span class="line"><span class="comment"> *        在向优先级队列插入元素时，每个元素有一个自己的号码牌，</span></span><br><span class="line"><span class="comment"> *        表示该元素是排在队列的前端还是后端。因此，在优先级队列里，也就没有先进先出这样一个结构特点了。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 因为是基于数组实现的队列，</span></span><br><span class="line"><span class="comment"> * 所以我们可以把数组的头部看作是队列的前端，把数组的尾部看作是队列的后端。这里我们规定数字越小的优先级越大</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">PriorityQueue</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//属性</span></span><br><span class="line">  <span class="built_in">this</span>.list = [];</span><br><span class="line"></span><br><span class="line">  <span class="comment">//创建内部构造函数</span></span><br><span class="line">  <span class="comment">/*我们准备在刚才创建的构造函数的内部再创建一个构造函数，为什么要这么做呢？</span></span><br><span class="line"><span class="comment">  在优先级队列中存储的元素都具有两个值，分别是 存入的数据 、号码牌（优先级），</span></span><br><span class="line"><span class="comment">  所以我们准备创建一个这样的构造函数，来存储这两个值，之后需要插入一个元素时，就可以直接 new 一个实例对象出来。</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="comment">//创建内部构造函数，存储元素的数据和优先级</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">EachElement</span>(<span class="params">e, num</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.element = e;</span><br><span class="line">    <span class="built_in">this</span>.priority = num;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//enqueue()方法就是向优先级队列添加一个元素，并自动根据每个元素的优先级插入到合适的位置。</span></span><br><span class="line">  <span class="comment">// 方法实现思路：</span></span><br><span class="line">  <span class="comment">//  先创建一个新元素的实例对象，将元素的值和优先级传给该实例对象</span></span><br><span class="line">  <span class="comment">//  先判断队列是否为空。若为空，则直接向队列添加该元素</span></span><br><span class="line">  <span class="comment">//  队列不为空，则从头遍历整个队列，判断我们要添加的元素与队列中的元素哪个优先级更大，然后在合适的位置插入元素</span></span><br><span class="line">  <span class="comment">//  若我们要添加的元素比当前队列中所有元素的优先级都要小，那么直接在队列后端添加该元素</span></span><br><span class="line">  PriorityQueue.prototype.enqueue = <span class="function"><span class="keyword">function</span> (<span class="params">e, priority</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 1.创建新元素的实例对象</span></span><br><span class="line">    <span class="keyword">let</span> element = <span class="keyword">new</span> EachElement(e, priority);</span><br><span class="line">    <span class="comment">// 2.判断队列是否为空</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.list.length === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="built_in">this</span>.list.push(element);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 3.队列不为空，遍历整个队列，比较优先级大小</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> <span class="built_in">this</span>.list) &#123;</span><br><span class="line">      <span class="keyword">if</span> (element.priority &lt; <span class="built_in">this</span>.list[i].priority) &#123;</span><br><span class="line">        <span class="built_in">this</span>.list.splice(i, <span class="number">0</span>, element);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 4.新元素优先级最小，直接添加到队列的后端</span></span><br><span class="line">    <span class="built_in">this</span>.list.push(element);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//出列</span></span><br><span class="line">  PriorityQueue.prototype.dequeue = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.list.shift();</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//front() 返回优先级队列第一个元素</span></span><br><span class="line">  PriorityQueue.prototype.front = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.list[<span class="number">0</span>];</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//isEmpty() 判断优先级队列是否为空</span></span><br><span class="line">  PriorityQueue.prototype.isEmpty = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.list.length === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//size() 返回优先级队列的元素个数</span></span><br><span class="line">  PriorityQueue.prototype.size = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.list.length;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">//返回当前优先级队列  与普通队列的 toString()方法不同的是，它不仅会将元素的值展示出来，还会展示每个元素的优先级。</span></span><br><span class="line">  PriorityQueue.prototype.toString = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> string = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> <span class="built_in">this</span>.list) &#123;</span><br><span class="line">      string += <span class="string">`<span class="subst">$&#123;<span class="built_in">this</span>.list[i].element&#125;</span>:<span class="subst">$&#123;<span class="built_in">this</span>.list[i].priority&#125;</span> `</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> string;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+                                
+                                  <!-- 《添加版权声明 -->
+                                  
+                                    <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+                                      
+                                        <!-- 添加版权声明》 -->
+
+                                        
+
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">优先级队列</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+                      
+                        <p class="article-more-link">
+                          <a class="article-more-a" href="/post/36266.html">
+                            展开全文 >>
+                          </a>
+                        </p>
+                        
+
+                          
+                                <div class="clearfix"></div>
+            </div>
+  </div>
+</article>
+
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+        
   
     <article id="post-归并排序"
   class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -1347,124 +1492,6 @@
 
         
   
-    <article id="post-自定义promise"
-  class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/34739.html">自定义promise</a>
-    </h1>
-  
-
-          
-            <a href="/post/34739.html" class="archive-article-date">
-  	<time datetime="2021-09-24T13:20:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-24</time>
-</a>
-              
-
-                    
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-
-            <div class="article-entry" itemprop="articleBody">
-              
-
-
-                    
-                              <h1 id="学习promise"><a href="#学习promise" class="headerlink" title="学习promise"></a>学习promise</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Promise</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">executor</span>)</span> &#123;</span><br><span class="line">    <span class="comment">//添加属性</span></span><br><span class="line">    <span class="built_in">this</span>.PromiseState = <span class="string">&quot;pending&quot;</span>;</span><br><span class="line">    <span class="built_in">this</span>.PromiseResult = <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">//声明属性</span></span><br><span class="line">    <span class="built_in">this</span>.callbacks = [];</span><br><span class="line">    <span class="comment">//保存实例对象的this的值</span></span><br><span class="line">    <span class="keyword">const</span> self = <span class="built_in">this</span>;</span><br><span class="line">    <span class="comment">//resolve函数</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">resolve</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">      <span class="comment">//判断状态 promise状态只能更改一次</span></span><br><span class="line">      <span class="keyword">if</span> (self.PromiseState !== <span class="string">&quot;pending&quot;</span>) <span class="keyword">return</span>;</span><br><span class="line">      <span class="comment">//修改对象状态(promiseState)</span></span><br><span class="line">      self.PromiseState = <span class="string">&quot;fulfilled&quot;</span>;</span><br><span class="line">      <span class="comment">//修改对象结果值(promiseResult)</span></span><br><span class="line">      self.PromiseResult = data;</span><br><span class="line">      <span class="comment">//调用成功的回调函数</span></span><br><span class="line">      <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        self.callbacks.forEach(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">          item.onResolved(data);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//reject函数</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">reject</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">      <span class="comment">//判断状态</span></span><br><span class="line">      <span class="keyword">if</span> (self.PromiseState !== <span class="string">&quot;pending&quot;</span>) <span class="keyword">return</span>;</span><br><span class="line">      <span class="comment">//修改对象状态(promiseState)</span></span><br><span class="line">      self.PromiseState = <span class="string">&quot;rejected&quot;</span>;</span><br><span class="line">      <span class="comment">//修改对象结果值(promiseResult)</span></span><br><span class="line">      self.PromiseResult = data;</span><br><span class="line">      <span class="comment">//调用成功的回调函数</span></span><br><span class="line">      <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        self.callbacks.forEach(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">          item.OnRejected(data);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">//执行器函数在内部是同步调用的</span></span><br><span class="line">      executor(resolve, reject);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="comment">//修改promise对象状态为【失败】</span></span><br><span class="line">      reject(e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//then</span></span><br><span class="line">  <span class="function"><span class="title">then</span>(<span class="params">onResolved, OnRejected</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> self = <span class="built_in">this</span>;</span><br><span class="line">    <span class="comment">//判断回调函数</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> onResolved !== <span class="string">&quot;function&quot;</span>) &#123;</span><br><span class="line">      OnRejected = <span class="function">(<span class="params">reason</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> reason;</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> onResolved !== <span class="string">&quot;function&quot;</span>) &#123;</span><br><span class="line">      onResolved = <span class="function">(<span class="params">value</span>) =&gt;</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">//封装函数</span></span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">type</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">          <span class="comment">//获取回调函数的执行结果</span></span><br><span class="line">          <span class="keyword">let</span> result = type(self.PromiseResult);</span><br><span class="line">          <span class="comment">//判断result</span></span><br><span class="line">          <span class="keyword">if</span> (result <span class="keyword">instanceof</span> <span class="built_in">Promise</span>) &#123;</span><br><span class="line">            <span class="comment">//如果是Promise类型的对象</span></span><br><span class="line">            result.then(</span><br><span class="line">              <span class="function">(<span class="params">v</span>) =&gt;</span> &#123;</span><br><span class="line">                resolve(v);</span><br><span class="line">              &#125;,</span><br><span class="line">              <span class="function">(<span class="params">r</span>) =&gt;</span> &#123;</span><br><span class="line">                reject(r);</span><br><span class="line">              &#125;</span><br><span class="line">            );</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//结果的对像状态为成功</span></span><br><span class="line">            resolve(result);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">          reject(e);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//调用回调函数  PromiseState</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">this</span>.PromiseState === <span class="string">&quot;fulfilled&quot;</span>) &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          callback(onResolved);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">this</span>.PromiseState === <span class="string">&quot;rejected&quot;</span>) &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          callback(OnRejected);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//判断pending状态</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">this</span>.PromiseState === <span class="string">&quot;pending&quot;</span>) &#123;</span><br><span class="line">        <span class="comment">//保存回调函数</span></span><br><span class="line">        <span class="built_in">this</span>.callbacks.push(&#123;</span><br><span class="line">          <span class="attr">onResolved</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            callback(onResolved);</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="attr">OnRejected</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            callback(OnRejected);</span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//catch</span></span><br><span class="line">  <span class="keyword">catch</span>(OnRejected) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.then(<span class="literal">undefined</span>, OnRejected);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//resolve</span></span><br><span class="line">  <span class="keyword">static</span> <span class="function"><span class="title">resolve</span>(<span class="params">value</span>)</span> &#123;</span><br><span class="line">    <span class="comment">//返回promise对象</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (value <span class="keyword">instanceof</span> <span class="built_in">Promise</span>) &#123;</span><br><span class="line">        value.then(</span><br><span class="line">          <span class="function">(<span class="params">v</span>) =&gt;</span> &#123;</span><br><span class="line">            resolve(v);</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="function">(<span class="params">r</span>) =&gt;</span> &#123;</span><br><span class="line">            reject(r);</span><br><span class="line">          &#125;</span><br><span class="line">        );</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//状态设置为成功</span></span><br><span class="line">        resolve(value);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//reject</span></span><br><span class="line">  <span class="keyword">static</span> <span class="function"><span class="title">reject</span>(<span class="params">reason</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      reject(reason);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//all</span></span><br><span class="line">  <span class="keyword">static</span> <span class="function"><span class="title">all</span>(<span class="params">promises</span>)</span> &#123;</span><br><span class="line">    <span class="comment">//返回结果为promise对象</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">//声明变量</span></span><br><span class="line">      <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">let</span> arr = [];</span><br><span class="line">      <span class="comment">//遍历</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; promises.length; i++) &#123;</span><br><span class="line">        <span class="built_in">Promise</span>.then(</span><br><span class="line">          <span class="function">(<span class="params">v</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">//得知对象的状态是成功</span></span><br><span class="line">            <span class="comment">//每个promise对象都成功</span></span><br><span class="line">            count++;</span><br><span class="line">            <span class="comment">//将当前promise对象成功的结果存入到数组中</span></span><br><span class="line">            arr[i] = v;</span><br><span class="line">            <span class="keyword">if</span> (count === promises.length) &#123;</span><br><span class="line">              <span class="comment">//修改状态</span></span><br><span class="line">              resolve(arr);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="function">(<span class="params">r</span>) =&gt;</span> &#123;</span><br><span class="line">            reject(r);</span><br><span class="line">          &#125;</span><br><span class="line">        );</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//race</span></span><br><span class="line">  <span class="keyword">static</span> <span class="function"><span class="title">race</span>(<span class="params">promises</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; promises.length; i++) &#123;</span><br><span class="line">        promises[i].then(</span><br><span class="line">          <span class="function">(<span class="params">v</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">//修改返回对象的状态为成功</span></span><br><span class="line">            resolve(v);</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="function">(<span class="params">r</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">//修改返回对象的状态为成功</span></span><br><span class="line">            reject(r);</span><br><span class="line">          &#125;</span><br><span class="line">        );</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-                                
-                                  <!-- 《添加版权声明 -->
-                                  
-                                    <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-                                      
-                                        <!-- 添加版权声明》 -->
-
-                                        
-
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">promise</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/post/34739.html">
-                            展开全文 >>
-                          </a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-      <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-        
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1641,6 +1668,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">选择排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">优先级队列</a>
               </li>
             
             <div class="clearfix"></div>
