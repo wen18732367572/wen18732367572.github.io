@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://thiswhl.cn">
-  <title>Tag: 栈 | whl</title>
+  <title>选择排序 | whl</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的个人博客~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="whl">
-<meta property="og:url" content="https://thiswhl.cn/tags/%E6%A0%88/index.html">
+  <meta name="description" content="选择排序它的工作原理是：第一次从待排序的数据元素中选出最小（或最大）的一个元素， 存放在序列的起始位置，然后再从剩余的未排序元素中寻找到最小（大）元素，继续放在起始位置直到未排序元素个数为0。 12345678910111213141516171819const selectionSort &#x3D; (arr) &#x3D;&gt; &amp;#123;  &#x2F;&#x2F;边界检查 判断数组为空或只有一个元素的时候  if (arr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="选择排序">
+<meta property="og:url" content="https://thiswhl.cn/post/51203.html">
 <meta property="og:site_name" content="whl">
-<meta property="og:description" content="这是我的个人博客~">
+<meta property="og:description" content="选择排序它的工作原理是：第一次从待排序的数据元素中选出最小（或最大）的一个元素， 存放在序列的起始位置，然后再从剩余的未排序元素中寻找到最小（大）元素，继续放在起始位置直到未排序元素个数为0。 12345678910111213141516171819const selectionSort &#x3D; (arr) &#x3D;&gt; &amp;#123;  &#x2F;&#x2F;边界检查 判断数组为空或只有一个元素的时候  if (arr">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-05T01:10:05.000Z">
+<meta property="article:modified_time" content="2021-11-05T01:14:38.920Z">
 <meta property="article:author" content="温海龙">
+<meta property="article:tag" content="选择排序">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="whl" type="application/atom+xml">
@@ -248,73 +251,287 @@
                   class="anm-canvas"></canvas>
               </div>
               <div id="js-content" class="content-ll">
-                
-  
-  
+                <article id="post-选择排序"
+  class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/post/50362.html" class="archive-article-date">
-  	<time datetime="2021-11-04T11:26:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/post/50362.html">学习栈结构</a>
+    <h1 class="article-title" itemprop="name">
+      选择排序
     </h1>
   
 
-        <div class="article-info info-on-right">
           
+            <a href="/post/51203.html" class="archive-article-date">
+  	<time datetime="2021-11-05T01:10:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-05</time>
+</a>
+              
+
+                    
+      </header>
+      
+        <!-- 目录内容 -->
+        
+            <!-- 目录内容结束 -->
+
+            <div class="article-entry" itemprop="articleBody">
+              
+
+
+                    
+                              <h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p><em>它的工作原理是：第一次从待排序的数据元素中选出最小（或最大）的一个元素， 存放在序列的起始位置，然后再从剩余的未排序元素中寻找到最小（大）元素，继续放在起始位置直到未排序元素个数为0。</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> selectionSort = <span class="function">(<span class="params">arr</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//边界检查 判断数组为空或只有一个元素的时候</span></span><br><span class="line">  <span class="keyword">if</span> (arr == <span class="literal">null</span> || arr.length &lt; <span class="number">2</span>) <span class="keyword">return</span> ;</span><br><span class="line">  <span class="keyword">let</span> len = arr.length;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="comment">//min变量保存该趟比较过程中，最小元素所对应的索引，</span></span><br><span class="line">    <span class="comment">//先假设前面的元素为最小元素</span></span><br><span class="line">    <span class="keyword">let</span> minIndex = i;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">      <span class="comment">//如果后面的元素小 则将后面的元素设置为最小索引</span></span><br><span class="line">      <span class="keyword">if</span> (arr[j] &lt; arr[minIndex]) &#123;</span><br><span class="line">        minIndex = j;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//然后交换此次查找的最小值和原始的最小值</span></span><br><span class="line">    [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>稳定性</strong>:  在选择排序中，每趟都会选出最大元素与最小元素，然后与两端元素交换，此时，待排序序列中如果存在与原来两端元素相等的元素，稳定性就可能被破坏。如[5,3,5,2,9]，在array[0]与array[3]元素交换时，序列的稳定性就被破坏了，所以选择排序是一种不稳定的排序算法。</p>
+<p><strong>时间复杂度</strong>: 选择排序的时间复杂度为O(n<sup>2</sup>)。</p>
+<p><strong>使用场景</strong>: 待排序序列中，元素个数较少时。</p>
+
+                                
+                                  <!-- 《添加版权声明 -->
+                                  
+                                    <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+                                      
+                                        <!-- 添加版权声明》 -->
+
+                                        
+                                          <div class="page-reward">
+                                            <a href="javascript:;" class="page-reward-btn tooltip-top">
+                                              <div class="tooltip tooltip-east">
+                                                <span class="tooltip-item">
+                                                  赏
+                                                </span>
+                                                <span class="tooltip-content">
+                                                  <span class="tooltip-text">
+                                                    <span class="tooltip-inner">
+                                                      <p class="reward-p"><i class="icon icon-quo-left"></i>
+                                                        谢谢你请我吃糖果<i class="icon icon-quo-right"></i>
+                                                      </p>
+                                                      <div class="reward-box">
+                                                        
+                                                          <div class="reward-box-item">
+                                                            <img class="reward-img" src="/assets/img/zhifubao.png">
+                                                            <span class="reward-type">支付宝</span>
+                                                          </div>
+                                                          
+                                                            
+                                                              <div class="reward-box-item">
+                                                                <img class="reward-img" src="/assets/img/weixin.png">
+                                                                <span class="reward-type">微信</span>
+                                                              </div>
+                                                              
+                                                      </div>
+                                                    </span>
+                                                  </span>
+                                                </span>
+                                              </div>
+                                            </a>
+                                          </div>
+                                          
+
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">选择排序</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+                    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
+        			<a href="/categories/算法//" class="article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+                      
+
+                          
+                            
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://thiswhl.cn/post/51203.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                              
+                                <div class="clearfix"></div>
+            </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/post/50190.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          插入排序
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/post/21238.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">冒泡排序</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+  <span id="busuanzi_container_page_pv">
+    本文阅读量: <span id="busuanzi_value_page_pv"></span>次
+</span>
+</nav>
 
     
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
 
 
+        
+          
+            <section id="comments" class="comments">
+              <style>
+                .comments {
+                  margin: 30px;
+                  padding: 10px;
+                  background: #fff
+                }
+
+                @media screen and (max-width:800px) {
+                  .comments {
+                    margin: auto;
+                    padding: 10px;
+                    background: #fff
+                  }
+                }
+              </style>
+              <div id="vcomment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "UgPJorKuiNvAT11RtGI9BtgW-gzGzoHsz",
+            app_key: "wul2j9Jy3rVlypJe4hEmu1mT",
+            placeholder: "友情提醒，留下正确的邮箱地址可以第一时间获取评论反馈",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: "10"
+    });
+</script>
+
+            </section>
+            
+
+              
+
+                    
+
+                          
+
+                                
+                                    <!-- 版权声明 -->
+                                    
+                                      <!--添加版权声明-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <ul class="copyright" hidden="hidden"></ul>
+
+<!-- 添加版权声明》 -->
+
+
+                                        
+                                          <!-- 声明结束 -->
+                                          
+                                                
               </div>
             </div>
           </div>
@@ -342,9 +559,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

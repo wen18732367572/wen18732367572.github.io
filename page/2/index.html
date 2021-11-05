@@ -111,7 +111,7 @@
             </ul>
           </nav>
           <nav>
-            总文章数 14
+            总文章数 19
           </nav>
           <nav class="header-smart-menu">
             
@@ -249,6 +249,566 @@
               </div>
               <div id="js-content" class="content-ll">
                 
+  
+    <article id="post-jsx语法规则"
+  class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/15151.html">jsx语法规则</a>
+    </h1>
+  
+
+          
+            <a href="/post/15151.html" class="archive-article-date">
+  	<time datetime="2021-09-03T10:00:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-03</time>
+</a>
+              
+
+                    
+      </header>
+      
+        <!-- 目录内容 -->
+        
+            <!-- 目录内容结束 -->
+
+            <div class="article-entry" itemprop="articleBody">
+              
+
+
+                    
+                              <h1 id="jsx语法规则"><a href="#jsx语法规则" class="headerlink" title="jsx语法规则"></a>jsx语法规则</h1><p>​    1.定义虚拟DOM，不要写引号</p>
+<p>​    2.标签中混入js表达时要用"{}"</p>
+<p>​    3.样式的类名指定 className</p>
+<p>​    4.内联样式要用style ="{{key:'value'}}"的形式写</p>
+<p>​    5.虚拟DOM必须只有一个根标签</p>
+<p>​    6.标签必须闭合</p>
+<p>​    7.标签首字母</p>
+<p>​          若小写字母开头 则将该标签转为html同名元素</p>
+<p>​          若大写字母开头 react则去渲染对应的组件</p>
+
+                                
+                                  <!-- 《添加版权声明 -->
+                                  
+                                    <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+                                      
+                                        <!-- 添加版权声明》 -->
+
+                                        
+
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">jsx语法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                    
+
+                      
+                        <p class="article-more-link">
+                          <a class="article-more-a" href="/post/15151.html">
+                            展开全文 >>
+                          </a>
+                        </p>
+                        
+
+                          
+                                <div class="clearfix"></div>
+            </div>
+  </div>
+</article>
+
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+        
+  
+    <article id="post-js中substr和substring的区别"
+  class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/12206.html">js中substr和substring的区别</a>
+    </h1>
+  
+
+          
+            <a href="/post/12206.html" class="archive-article-date">
+  	<time datetime="2021-08-03T12:23:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-03</time>
+</a>
+              
+
+                    
+      </header>
+      
+        <!-- 目录内容 -->
+        
+            <!-- 目录内容结束 -->
+
+            <div class="article-entry" itemprop="articleBody">
+              
+
+
+                    
+                              <p>js中substr和substring都是截取字符串中子串，非常相近，可以有一个或两个参数。</p>
+<p>语法：substr(start [，length]) 第一个字符的索引是0，start必选 length可选</p>
+<p>　　　substring(start [, end]) 第一个字符的索引是0，start必选 end可选</p>
+<p>相同点：当有一个参数时，两者的功能是一样的，返回从start指定的位置直到字符串结束的子串</p>
+<p>var str = “hello Tony”;</p>
+<p>str.substr(6); //Tony</p>
+<p>str.substring(6); //Tony</p>
+<p>不同点：有两个参数时</p>
+<p>（1）substr(start,length) 返回从start位置开始length长度的子串</p>
+<p>“goodboy”.substr(1,6);  //oodboy</p>
+<p>【注】当length为0或者负数，返回空字符串</p>
+<p>（2）substring(start,end) 返回从start位置开始到end位置的子串（不包含end）</p>
+<p>“goodboy”.substring(1,6); //oodbo</p>
+<p>【注】:</p>
+<p>（1）substring 方法使用 start 和 end 两者中的较小值作为子字符串的起始点</p>
+<p>（2）start 或 end 为 NaN 或者负数，那么将其替换为0</p>
+
+                                
+                                  <!-- 《添加版权声明 -->
+                                  
+                                    <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+                                      
+                                        <!-- 添加版权声明》 -->
+
+                                        
+
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">js字符串</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+                      
+                        <p class="article-more-link">
+                          <a class="article-more-a" href="/post/12206.html">
+                            展开全文 >>
+                          </a>
+                        </p>
+                        
+
+                          
+                                <div class="clearfix"></div>
+            </div>
+  </div>
+</article>
+
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+        
+  
+    <article id="post-yilia主题创建分类（categories）和标签（tags）首页"
+  class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/33427.html">yilia主题创建分类（categories）和标签（tags）首页</a>
+    </h1>
+  
+
+          
+            <a href="/post/33427.html" class="archive-article-date">
+  	<time datetime="2021-07-31T09:32:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-31</time>
+</a>
+              
+
+                    
+      </header>
+      
+        <!-- 目录内容 -->
+        
+            <!-- 目录内容结束 -->
+
+            <div class="article-entry" itemprop="articleBody">
+              
+
+
+                    
+                              <h1 id="步骤1"><a href="#步骤1" class="headerlink" title="步骤1"></a>步骤1</h1><p>新建一个页面，命名为 ‘categories’ | ‘tags’。命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;categories&quot;</span><br><span class="line">hexo new page &quot;tags&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="步骤2"><a href="#步骤2" class="headerlink" title="步骤2"></a>步骤2</h1><p>编辑刚新建的页面，将页面的类型设置为 categories | tags ，主题将自动为这个页面显示 分类|标签云。页面内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2016-10-21 11:59:10</span><br><span class="line">type: &quot;categories&quot;---</span><br><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2016-10-21 11:59:10</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h1 id="步骤3"><a href="#步骤3" class="headerlink" title="步骤3"></a>步骤3</h1><p>修改yilia主题的配置文件 （yilia/_config.yml）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  archives: /archives</span><br><span class="line">  categories: /categories</span><br><span class="line">  tags: /tags</span><br></pre></td></tr></table></figure>
+
+<h1 id="步骤4"><a href="#步骤4" class="headerlink" title="步骤4*"></a>步骤4*</h1><p>找到 <code>layout/_partial/article.ejs</code> （我用的是 yilia 主题）</p>
+<p>然后找到 <code>&lt;div class=&quot;article-entry&quot; itemprop=&quot;articleBody&quot;&gt;</code> 这一行添加以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (page.type === &quot;tags&quot;) &#123; %&gt;</span><br><span class="line">&lt;div class=&quot;tag-cloud&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;tag-cloud-title&quot;&gt;</span><br><span class="line">	&lt;%- _p(&#x27;counter.tag_cloud&#x27;, site.tags.length) %&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;div class=&quot;tag-cloud-tags&quot;&gt;</span><br><span class="line">	&lt;%- tagcloud(&#123;</span><br><span class="line">		min_font: 12,</span><br><span class="line">		max_font: 30,</span><br><span class="line">		amount: 200,</span><br><span class="line">		color: true,</span><br><span class="line">		start_color: &#x27;#ccc&#x27;,</span><br><span class="line">		end_color: &#x27;#111&#x27;</span><br><span class="line">		&#125;) %&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;% &#125; else if (page.type === &#x27;categories&#x27;) &#123; %&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;category-all-page&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;category-all-title&quot;&gt;</span><br><span class="line">	&lt;%- _p(&#x27;counter.categories&#x27;, site.categories.length) %&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;div class=&quot;category-all&quot;&gt;</span><br><span class="line">	&lt;%- list_categories() %&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;% &#125; else &#123; %&gt;</span><br><span class="line"></span><br><span class="line">	&lt;% if (post.excerpt &amp;&amp; index)&#123; %&gt;		&lt;%- post.excerpt %&gt;</span><br><span class="line">	&lt;% &#125; else &#123; %&gt;</span><br><span class="line">		&lt;%- post.content %&gt;</span><br><span class="line">	&lt;% &#125; %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="步骤5"><a href="#步骤5" class="headerlink" title="步骤5"></a>步骤5</h1><p>修改样式 找到 <code>yilia/source/css/_partial/article.styl</code> 在最后面添加下面的 css 代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line">/*tag-cloud*/</span><br><span class="line">.tag-cloud &#123;</span><br><span class="line">  text-align: center;</span><br><span class="line">  margin-top: 50px;</span><br><span class="line">&#125;</span><br><span class="line">.tag-cloud a &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  margin: 10px;</span><br><span class="line">&#125;</span><br><span class="line">.tag-cloud-title &#123;</span><br><span class="line">  font-weight: 700;</span><br><span class="line">  font-size: 24px;</span><br><span class="line">&#125;</span><br><span class="line">.tag-cloud-tags &#123;</span><br><span class="line">  margin-top: 15px;</span><br><span class="line">  a &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    text-decoration: none;</span><br><span class="line">    font-weight: normal;</span><br><span class="line">    font-size: 10px;</span><br><span class="line">    color: #fff;</span><br><span class="line">    line-height: normal;</span><br><span class="line">    padding: 5px 5px 5px 10px;</span><br><span class="line">    position: relative;</span><br><span class="line">    border-radius: 0 5px 5px 0;</span><br><span class="line">    font-family: Menlo, Monaco, &quot;Andale Mono&quot;, &quot;lucida console&quot;, &quot;Courier New&quot;, monospace;</span><br><span class="line">    &amp;:hover &#123;</span><br><span class="line">      opacity: 0.8;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;:before &#123;</span><br><span class="line">      content: &quot; &quot;;</span><br><span class="line">      width: 0;</span><br><span class="line">      height: 0;</span><br><span class="line">      position: absolute;</span><br><span class="line">      top: 0;</span><br><span class="line">      left: -18px;</span><br><span class="line">      border: 9px solid transparent;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;:after &#123;</span><br><span class="line">      content: &quot; &quot;;</span><br><span class="line">      width: 4px;</span><br><span class="line">      height: 4px;</span><br><span class="line">      </span><br><span class="line">      border-radius: 4px;</span><br><span class="line">      box-shadow: 0 0 0 1px rgba(0, 0, 0, .3);</span><br><span class="line">      position: absolute;</span><br><span class="line">      top: 7px;</span><br><span class="line">      left: 2px;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  a.color1 &#123;</span><br><span class="line">    background: #FF945C;</span><br><span class="line">    &amp;:before &#123;</span><br><span class="line">      border-right-color: #FF945C;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  a.color2 &#123;</span><br><span class="line">    background: #F5C7B7;</span><br><span class="line">    &amp;:before &#123;</span><br><span class="line">      border-right-color: #F5C7B7;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  a.color3 &#123;</span><br><span class="line">    background: #BA8F6C;</span><br><span class="line">    &amp;:before &#123;</span><br><span class="line">      border-right-color: #BA8F6C;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  a.color4 &#123;</span><br><span class="line">    background: #CFB7C4;</span><br><span class="line">    &amp;:before &#123;</span><br><span class="line">      border-right-color: #CFB7C4;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  a.color5 &#123;</span><br><span class="line">    background: #7B5D5F;</span><br><span class="line">    &amp;:before &#123;</span><br><span class="line">      border-right-color: #7B5D5F;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*category-all-page*/</span><br><span class="line">.category-all-page &#123;</span><br><span class="line">  margin-top: 50px;</span><br><span class="line">  .category-all-title &#123;</span><br><span class="line">    font-weight: 700;</span><br><span class="line">    font-size: 24px;</span><br><span class="line">    text-align: center;</span><br><span class="line">  &#125;</span><br><span class="line">  .category-list-item:after &#123;</span><br><span class="line">    content: &#x27;&#x27;;</span><br><span class="line">    clear: both;</span><br><span class="line">    display: table;</span><br><span class="line">  &#125;</span><br><span class="line">  .category-list-count &#123;</span><br><span class="line">    float: right;</span><br><span class="line">    margin-left: 5px;</span><br><span class="line">  &#125;</span><br><span class="line">  .category-list-count:before &#123;</span><br><span class="line">    content: &#x27;一共 &#x27;;</span><br><span class="line">  &#125;</span><br><span class="line">  .category-list-count:after &#123;</span><br><span class="line">    content: &#x27; 篇文章&#x27;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>原文:<a target="_blank" rel="noopener" href="http://orzcss.com/posts/5a207d64/">http://orzcss.com/posts/5a207d64/</a></p>
+
+                                
+                                  <!-- 《添加版权声明 -->
+                                  
+                                    <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+                                      
+                                        <!-- 添加版权声明》 -->
+
+                                        
+
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">标签</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分类</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/博客//" class="article-tag-list-link color3">博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+                      
+                        <p class="article-more-link">
+                          <a class="article-more-a" href="/post/33427.html">
+                            展开全文 >>
+                          </a>
+                        </p>
+                        
+
+                          
+                                <div class="clearfix"></div>
+            </div>
+  </div>
+</article>
+
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+        
+  
+    <article id="post-Nice-to-meet-you"
+  class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/14875.html">Nice to meet you</a>
+    </h1>
+  
+
+          
+            <a href="/post/14875.html" class="archive-article-date">
+  	<time datetime="2021-07-31T03:36:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-31</time>
+</a>
+              
+
+                    
+      </header>
+      
+        <!-- 目录内容 -->
+        
+            <!-- 目录内容结束 -->
+
+            <div class="article-entry" itemprop="articleBody">
+              
+
+
+                    
+                              
+                                
+                                  <!-- 《添加版权声明 -->
+                                  
+                                    <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+                                      
+                                        <!-- 添加版权声明》 -->
+
+                                        
+
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">你好</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+                    
+
+                      
+                        <p class="article-more-link">
+                          <a class="article-more-a" href="/post/14875.html">
+                            展开全文 >>
+                          </a>
+                        </p>
+                        
+
+                          
+                                <div class="clearfix"></div>
+            </div>
+  </div>
+</article>
+
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+        
+  
+    <article id="post-测试"
+  class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/37773.html">测试</a>
+    </h1>
+  
+
+          
+            <a href="/post/37773.html" class="archive-article-date">
+  	<time datetime="2021-07-29T13:00:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-29</time>
+</a>
+              
+
+                    
+      </header>
+      
+        <!-- 目录内容 -->
+        
+            <!-- 目录内容结束 -->
+
+            <div class="article-entry" itemprop="articleBody">
+              
+
+
+                    
+                              <h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>132132456</p>
+<h2 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h2><p>1231321</p>
+<h3 id="测试-2"><a href="#测试-2" class="headerlink" title="测试"></a>测试</h3><p>132</p>
+<h4 id="测试-3"><a href="#测试-3" class="headerlink" title="测试"></a>测试</h4><p>123123</p>
+
+                                
+                                  <!-- 《添加版权声明 -->
+                                  
+                                    <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+                                      
+                                        <!-- 添加版权声明》 -->
+
+                                        
+
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+                    
+
+                      
+                        <p class="article-more-link">
+                          <a class="article-more-a" href="/post/37773.html">
+                            展开全文 >>
+                          </a>
+                        </p>
+                        
+
+                          
+                                <div class="clearfix"></div>
+            </div>
+  </div>
+</article>
+
+      <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+        
   
     <article id="post-标题"
   class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -774,6 +1334,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">希尔排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">快速排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">插入排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">选择排序</a>
               </li>
             
             <div class="clearfix"></div>
